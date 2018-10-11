@@ -58,14 +58,11 @@ app.delete('/todos/:id', (req, res) => {
 
     // validate the id -> not valid? return 404
     if(!ObjectID.isValid(id)){
-        console.log('No object ID');
         return res.status(404).send();
     }
 
     Todo.findByIdAndRemove(id).then((todo) => {
         if(!todo) {
-            console.log('Object is null');
-
             return res.status(404).send();
         }
 
