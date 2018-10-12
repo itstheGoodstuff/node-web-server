@@ -123,7 +123,6 @@ app.get('/users/me', authenticate, (req, res) => {
 
 
 // POST /users/login {email, password}
-// Pick of email and password, respond using response.send, send body data, make the login call in postman, passing email and password
 
 app.post('/users/login', (req, res) => {
     let body = _.pick(req.body, ['email', 'password']);
